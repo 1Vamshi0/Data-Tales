@@ -309,11 +309,18 @@ html, body {
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease;
+    display: inline-block; /* Ensure it respects text-align: center */
 }
 
 .continue-btn:hover {
     background-color: #2b4ed1; /* Darker shade on hover */
     transform: translateY(-1px);
+}
+
+/* Add this if you want the button to be hidden initially via CSS too */
+/* Although it's already handled by inline style in the HTML */
+.continue-btn.hidden-by-default {
+    display: none;
 }
 
 /* Data summary / Cleaning Panel Styles (Used for Data Viewing/Cleaning Pages) */
@@ -727,7 +734,7 @@ select.formm-control { /* Ensure select matches input height */
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 20px;
+    padding: 15px;
     overflow-y: auto;
     position: relative;
     background-color: #ffffff;
@@ -743,7 +750,7 @@ select.formm-control { /* Ensure select matches input height */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: auto;
     width: 100%; /* Default to full width, adjusted by size class */
     max-width: 100%; /* Prevent overflow */
     height: auto; /* Allow height to adjust to content */
@@ -793,6 +800,17 @@ select.formm-control { /* Ensure select matches input height */
     overflow: hidden;
 }
 
+/* **** MODIFICATION START **** */
+/* Apply padding specifically to the body of the visualization controls panel */
+.visualization-controls-panel .panel-body {
+    padding: 20px; /* Increased padding */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Spacing between elements inside */
+    overflow-y: auto; /* Allow scrolling if needed */
+    flex: 1; /* Allow body to take up available vertical space */
+}
+/* **** MODIFICATION END **** */
 
 .visualization-controls-panel.collapsed {
     width: 40px; /* Small rectangle width */
@@ -974,118 +992,137 @@ select.formm-control { /* Ensure select matches input height */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100%; /* Make sure this container fills the available space */
+    width: 100%;  /* Ensure it takes width */
 }
 
 .upload-area {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Center content vertically */
     width: 100%;
-    max-width: 500px;
-    min-height: 300px;
-    border: 2px dashed #ccc;
-    border-radius: 8px;
-    padding: 24px;
+    max-width: 550px; /* Slightly wider */
+    min-height: 350px; /* Slightly taller */
+    border: 2px dashed #cbd5e0; /* Slightly darker border */
+    border-radius: 10px; /* More rounded */
+    padding: 30px; /* More padding */
     text-align: center;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
     transition: all 0.3s ease;
 }
 
+/* More prominent drag-over state */
 .upload-area.drag-over {
     border-color: #4a6cf7;
-    background-color: rgba(74, 108, 247, 0.05);
+    background-color: #e9efff; /* Lighter blue background */
+    box-shadow: inset 0 0 10px rgba(74, 108, 247, 0.1);
 }
 
 .upload-icon {
     color: #4a6cf7;
-    margin-bottom: 16px;
+    margin-bottom: 20px; /* More space */
 }
 
 .upload-title {
-    font-size: 20px;
+    font-size: 22px; /* Larger title */
     font-weight: 600;
-    margin-bottom: 8px;
-    color: #333;
+    margin-bottom: 10px; /* Adjust spacing */
+    color: #1a202c; /* Darker color */
 }
 
 .upload-description {
     font-size: 16px;
-    color: #666;
-    margin-bottom: 8px;
+    color: #4a5568; /* Use theme color */
+    margin-bottom: 10px; /* Adjust spacing */
 }
 
 .upload-formats {
     font-size: 14px;
-    color: #999;
+    color: #718096; /* Use theme color */
     margin-bottom: 24px;
 }
 
 .upload-browse-btn {
-    padding: 10px 20px;
+    padding: 12px 24px; /* Larger button */
     background-color: #4a6cf7;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px; /* Match other buttons */
     font-size: 16px;
+    font-weight: 500; /* Match other buttons */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .upload-browse-btn:hover {
-    background-color: #3a5bd9;
+    background-color: #2b4ed1; /* Darker shade on hover */
+    transform: translateY(-1px);
 }
 
 .file-list-container {
     width: 100%;
+    margin-top: 24px; /* More space before list */
 }
 
 .file-list {
     list-style: none;
-    margin-top: 16px;
-    max-height: 200px;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    max-height: 250px; /* Allow more height for list */
     overflow-y: auto;
+    text-align: left; /* Align file items left */
 }
 
+/* Adjust file item padding and spacing */
 .file-item {
     display: flex;
     align-items: center;
-    padding: 12px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    margin-bottom: 8px;
-    background-color: #f9f9f9;
+    padding: 10px 15px; /* Adjust padding */
+    border: 1px solid #e5e7eb; /* Match panel borders */
+    border-radius: 6px; /* Slightly more rounded */
+    margin-bottom: 10px; /* Increase spacing */
+    background-color: #f9fafb; /* Light background */
+    transition: background-color 0.2s ease;
+}
+
+.file-item:hover {
+    background-color: #edf2f7; /* Subtle hover effect */
 }
 
 .file-icon {
     color: #4a6cf7;
-    margin-right: 12px;
+    margin-right: 15px; /* More space after icon */
+    font-size: 1.2em; /* Slightly larger icon */
+    flex-shrink: 0;
 }
 
 .file-name {
-    flex: 1;
+    flex-grow: 1; /* Allow name to take available space */
     font-size: 14px;
     font-weight: 500;
-    color: #333;
+    color: #2d3748; /* Match text color */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-right: 10px;
+    margin-right: 15px; /* More space before size */
 }
 
 .file-size {
-    font-size: 12px;
-    color: #999;
-    margin-right: 12px;
+    font-size: 13px; /* Slightly larger size text */
+    color: #718096; /* Match secondary text color */
+    margin-right: 15px;
+    flex-shrink: 0; /* Prevent size from shrinking */
 }
 
 .remove-file-btn {
-    width: 24px;
-    height: 24px;
+    width: 26px; /* Slightly larger button */
+    height: 26px;
     border-radius: 50%;
     border: none;
-    background-color: #ff4d4f;
-    color: white;
+    background-color: #fed7d7; /* Lighter red */
+    color: #c53030; /* Darker red */
     font-size: 16px;
     cursor: pointer;
     display: flex;
@@ -1093,27 +1130,43 @@ select.formm-control { /* Ensure select matches input height */
     align-items: center;
     transition: background-color 0.3s ease;
     flex-shrink: 0;
+    font-weight: bold;
+    line-height: 1; /* Ensure 'x' is centered */
 }
 
 .remove-file-btn:hover {
-    background-color: #cf1322;
+    background-color: #fbb6b6; /* Slightly darker red on hover */
+    color: #9b2c2c;
 }
 
+/* Style Upload More button similar to Browse button */
 .upload-more-btn {
-    margin-top: 16px;
-    padding: 8px 16px;
-    background-color: transparent;
-    color: #4a6cf7;
-    border: 1px solid #4a6cf7;
-    border-radius: 4px;
-    font-size: 14px;
+    margin-top: 20px; /* More space above */
+    padding: 10px 20px;
+    background-color: #edf2f7; /* Match secondary button style */
+    color: #2d3748;
+    border: 1px solid #e2e8f0; /* Match secondary button style */
+    border-radius: 6px; /* Match other buttons */
+    font-size: 15px; /* Match other buttons */
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .upload-more-btn:hover {
-    background-color: rgba(74, 108, 247, 0.1);
+    background-color: #e2e8f0; /* Match secondary button hover */
+    border-color: #cbd5e0;
+    transform: translateY(-1px);
 }
+
+/* Container for the continue button */
+.continue-button-container {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px; /* Add margin above the button container */
+    width: 100%; /* Ensure it takes full width for centering */
+}
+
 
 /* Message styles */
 .message {
@@ -1246,4 +1299,317 @@ select.formm-control { /* Ensure select matches input height */
     .breadcrumb ul {
         flex-wrap: wrap;
     }
+
+    .upload-area {
+        max-width: 90%; /* Adjust max-width for smaller screens */
+        padding: 20px; /* Reduce padding */
+        min-height: 300px; /* Adjust min-height */
+    }
+
+    .upload-title {
+        font-size: 20px;
+    }
+
+    .upload-browse-btn {
+        padding: 10px 18px;
+    }
+
+    .file-list {
+        max-height: 200px;
+    }
+}
+
+/* --- Unique File Uploader Styles --- */
+/* <<< ADDED CSS RULES START HERE >>> */
+
+/* Style the main container using its ID */
+#data-tales-file-uploader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    width: 100%;
+    max-width: 550px; /* Adjust as needed */
+    min-height: 350px; /* Adjust as needed */
+    border: 2px dashed #a0aec0; /* Unique border style */
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    background-color: #fdfdfe; /* Slightly different background */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); /* Subtle unique shadow */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    margin: 20px auto; /* Center the block if needed */
+}
+
+/* Unique Drag-over state */
+#data-tales-file-uploader.drag-over {
+    border-color: #4a6cf7;
+    background-color: #f0f4ff; /* Unique background */
+}
+
+/* Style children specifically within this uploader */
+#data-tales-file-uploader .upload-icon svg {
+    color: #4a6cf7; /* Keep icon color or make unique */
+    width: 45px;    /* Adjust size */
+    height: 45px;
+    margin-bottom: 15px;
+}
+
+#data-tales-file-uploader .upload-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1a202c;
+}
+
+#data-tales-file-uploader .upload-description {
+    font-size: 15px;
+    color: #6b7280; /* Unique description color */
+    margin-bottom: 8px;
+}
+
+ #data-tales-file-uploader .upload-formats {
+    font-size: 13px;
+    color: #9ca3af; /* Unique format color */
+    margin-bottom: 20px;
+}
+
+#data-tales-file-uploader .upload-browse-btn {
+    padding: 10px 20px;
+    background-color: #4a6cf7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.1s ease;
+}
+
+#data-tales-file-uploader .upload-browse-btn:hover {
+    background-color: #3c5ad0; /* Unique hover color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide the actual file input (if still needed) */
+#data-tales-file-uploader .file-input {
+   display: none;
+}
+
+/* --- Styling for file list within this specific uploader --- */
+#data-tales-file-uploader .file-list-container {
+     width: 100%;
+     margin-top: 20px;
+ }
+
+ #data-tales-file-uploader .file-list {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+     max-height: 200px;
+     overflow-y: auto;
+     text-align: left;
+ }
+
+ #data-tales-file-uploader .file-item {
+     display: flex;
+     align-items: center;
+     padding: 8px 12px;
+     border: 1px solid #e5e7eb;
+     border-radius: 4px;
+     margin-bottom: 8px;
+     background-color: #f9fafb;
+ }
+ #data-tales-file-uploader .file-icon {
+     margin-right: 10px;
+ }
+ #data-tales-file-uploader .file-name {
+     flex-grow: 1;
+     font-size: 14px;
+     margin-right: 10px;
+ }
+  #data-tales-file-uploader .file-size {
+     font-size: 12px;
+     color: #6b7280;
+     margin-right: 10px;
+ }
+ #data-tales-file-uploader .remove-file-btn {
+     width: 22px;
+     height: 22px;
+     border-radius: 50%;
+     border: none;
+     background-color: #fee2e2;
+     color: #ef4444;
+     font-size: 14px;
+     cursor: pointer;
+  }
+ #data-tales-file-uploader .remove-file-btn:hover {
+     background-color: #fecaca;
+ }
+
+/* --- Progress Bar styling specific to this uploader --- */
+#data-tales-file-uploader .upload-status-area {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+#data-tales-file-uploader .progress-bar-container {
+    width: 90%;
+    background-color: #e5e7eb;
+    border-radius: 5px;
+    margin: 10px auto;
+    overflow: hidden; /* Ensure progress bar stays within */
+}
+#data-tales-file-uploader .progress-bar {
+    height: 18px;
+    background-color: #4ade80; /* Unique progress color */
+    border-radius: 5px;
+    text-align: center;
+    color: #14532d; /* Darker text for better contrast */
+    font-size: 12px;
+    line-height: 18px;
+    transition: width 0.3s ease;
+    width: 0%; /* Start at 0 */
+}
+ #data-tales-file-uploader .upload-status-message {
+    font-size: 13px;
+    color: #4b5563;
+    margin-top: 5px;
+ }
+ #data-tales-file-uploader .cancel-upload-btn {
+    background-color: #ffedd5;
+    color: #9a3412;
+    border: 1px solid #fed7aa;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+ }
+  #data-tales-file-uploader .cancel-upload-btn:hover {
+     background-color: #fed7aa;
+  }
+
+
+ #data-tales-file-uploader-continue-container {
+    text-align: center;
+    padding: 15px;
+    margin-top: 15px;
+    width: 100%;
+}
+#data-tales-file-uploader-continue-container .continue-btn {
+    background-color: #10b981;
+}
+#data-tales-file-uploader-continue-container .continue-btn:hover {
+    background-color: #059669;
+}
+
+/* Storytelling Page Specific Styles */
+.storytelling-content-area {
+    display: flex;
+    padding: 10px;
+    gap: 20px; /* Space between controls and display */
+    overflow: hidden;
+    flex: 1;
+}
+
+.storytelling-controls-panel {
+    flex: none;
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.storytelling-controls-panel .panel-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+.generate-story-btn {
+    background-color: #8b5cf6; /* Violet color */
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+}
+.generate-story-btn:hover {
+    background-color: #7c3aed;
+}
+.generate-story-btn:disabled {
+    background-color: #a78bfa;
+    cursor: not-allowed;
+}
+
+.loading-indicator {
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280;
+    padding: 10px;
+}
+
+.story-display-panel {
+    flex: 3;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-output-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.story-narrative-placeholder {
+    color: #9ca3af;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.story-charts-container {
+    margin-top: 30px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 20px;
+}
+
+.story-charts-container h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1a202c;
+}
+
+.story-controls {
+    margin-left: auto; /* Push controls to the right */
+}
+
+.story-control-btn {
+    padding: 6px 12px;
+    background-color: #edf2f7;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2d3748;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.story-control-btn:hover {
+    background-color: #e2e8f0;
 }
