@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Tales - Data Visualization</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom/dist/chartjs-plugin-zoom.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-breadcrumb-container">
+                <div class="logo">
+                    <div class="logo-icon"><span class="logo-letter">D</span></div>
+                    <div class="logo-text">DataStory</div>
+                </div>
+                <div class="breadcrumb">
+                    <ul>
+                        <li class="breadcrumb-item"><a href="upload.html">Data Upload</a></li>
+                        <li class="breadcrumb-separator">›</li>
+                        <li class="breadcrumb-item"><a href="data_viewing.html">Data Viewing</a></li>
+                        <li class="breadcrumb-separator">›</li>
+                        <li class="breadcrumb-item"><a href="data_cleaning.html">Data Cleaning</a></li>
+                        <li class="breadcrumb-separator">›</li>
+                        <li class="breadcrumb-item active"><span>Data Visualization</span></li>
+                        <li class="breadcrumb-separator">›</li>
+                        <li class="breadcrumb-item"><a href="data_storytelling.html">Data Storytelling</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="user-btn">User</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="content-area visualization-content-area">
+                <div class="dashboard-display-panel">
+                    <div class="panel-header">
+                        <h2 id="dashboard-title">Dashboard</h2>
+                    </div>
+                    <div id="dashboard-container" class="dashboard-container">
+                        <div id="dashboard-placeholder" class="dashboard-placeholder">
+                            Click "Dashboard" or manually create charts to populate this area.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visualization-controls-panel">
+                    <div class="panel-header">
+                        <h2>Visualization Options</h2>
+                        <button class="collapse-btn" aria-label="Toggle sidebar">
+                            <span class="collapse-icon">≪</span>
+                        </button>
+                    </div>
+                    <div class="panel-body">
+                        <button id="auto-dashboard-btn" class="dashboard-btn">Dashboard <span class="arrow-icon">▶</span></button>
+                        <p>Select columns and chart types manually or use auto-suggestion:</p>
+                        <select id="column-select-x" class="form-control">
+                            <option value="">Select X-axis / Category</option>
+                        </select>
+                        <select id="column-select-y" class="form-control">
+                            <option value="">Select Y-axis / Value (Optional)</option>
+                        </select>
+                        <select id="chart-type-select" class="form-control">
+                            <option value="bar">Bar Chart</option>
+                            <option value="line">Line Chart</option>
+                            <option value="pie">Pie Chart</option>
+                            <option value="scatter">Scatter Plot</option>
+                            <option value="histogram">Histogram</option>
+                        </select>
+                        <div class="chart-size-select">
+                            <label for="chart-size">Chart Size:</label>
+                            <select id="chart-size" class="form-control">
+                                <option value="full">Full Width</option>
+                                <option value="half">Half Width</option>
+                            </select>
+                        </div>
+                        <button id="create-chart-btn" class="control-btn">Create Chart</button>
+                        <button id="go-to-storytelling-btn" class="control-btn">
+                            Proceed to Storytelling →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data_visualization.js"></script>
+</body>
+</html>

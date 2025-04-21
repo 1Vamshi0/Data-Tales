@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Tales - tool for data</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <!-- Main container -->
+    <div class="container">
+        <!-- Main content area -->
+        <div class="main-content">
+            <!-- Header with breadcrumbs -->
+            <div class="header">
+                <div class="logo-breadcrumb-container">
+                    <div class="logo">
+                        <span class="logo-icon"></span>
+                        <span class="logo-text">Data Tales</span>
+                    </div>
+                    
+                    <!-- Breadcrumb navigation -->
+                    <div class="breadcrumb">
+                        <ul>
+                            <li class="breadcrumb-item active"> <span>Data Upload</span> </li>
+                            <li class="breadcrumb-separator">›</li> <li class="breadcrumb-item">
+                                <a href="data_viewing.html">Data Viewing</a>
+                            </li>
+                            <li class="breadcrumb-separator">›</li> <li class="breadcrumb-item">
+                                <a href="data_cleaning.html">Data Cleaning</a>
+                            </li>
+                            <li class="breadcrumb-separator">›</li> <li class="breadcrumb-item">
+                                <a href="data_visualization.html">Data Visualization</a>
+                            </li>
+                            <li class="breadcrumb-separator">›</li> <li class="breadcrumb-item">
+                                <span>Data Storytelling</span> </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                <div class="header-controls">
+                    <div class="history-btn">
+                        <span>User</span>
+                        <span class="user-icon"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content area -->
+            <div class="content-area">
+                <!-- Left panel Upload interface -->
+                <div class="code-editor-panel">
+                    <!-- Upload display area -->
+                    <div class="code-display upload-container">
+                        <div class="upload-area">
+                            <div class="upload-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                            </div>
+                            <h3 class="upload-title">Upload Your Dataset</h3>
+                            <p class="upload-description">Drag and drop files here or click to browse</p>
+                            <p class="upload-formats">Supported formats: CSV, Excel</p>
+                            <button class="upload-browse-btn">Browse Files</button>
+                            <input type="file" id="file-upload" class="file-input" accept=".csv,.xlsx,.xls" multiple hidden>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="upload.js"></script>
+</body>
+</html>

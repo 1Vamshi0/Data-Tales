@@ -1,0 +1,1249 @@
+/* SP/Style.css - Combined and Updated */
+
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Ensure body takes full height and prevents its own scroll */
+html, body {
+    height: 100%;
+    overflow: hidden; /* Prevent scroll on the main body */
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #2d3748; /* Default text color */
+    background-color: #f7f9fc; /* Default background */
+}
+
+/* Ensure the main container uses full height */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Make container exactly viewport height */
+    width: 100%;
+    max-width: 1600px; /* Optional max width */
+    margin: 0 auto;
+    background-color: #f7f9fc; /* Ensure container has background */
+}
+
+/* Make main content area flex and prevent its overflow */
+.main-content {
+    flex: 1; /* Allows this section to grow and fill available space */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden; /* Prevent this container from causing page scroll */
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.logo-breadcrumb-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #f18100, #ff6200); /* Example gradient */
+    border-radius: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-letter { /* Example if you put a letter inside */
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a202c;
+}
+
+.breadcrumb ul {
+    display: flex;
+    list-style: none;
+}
+
+.breadcrumb-item {
+    font-size: 14px;
+    color: #718096;
+}
+
+.breadcrumb-item.active {
+    color: #4a6cf7; /* Example active color */
+    font-weight: 500;
+}
+
+.breadcrumb-item a {
+    color: #718096;
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    color: #4a6cf7;
+    text-decoration: underline;
+}
+
+.breadcrumb-separator {
+    margin: 0 8px;
+    color: #cbd5e0;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+}
+
+.user-btn { /* Style for the User button */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background-color: #edf2f7;
+    border-radius: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.user-btn:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+.history-icon { /* Assuming this icon is inside user-btn */
+    width: 16px;
+    height: 16px;
+    background-color: #a0aec0; /* Example icon color */
+    border-radius: 50%;
+}
+
+/* Make the primary content area flex and prevent its overflow */
+.content-area {
+    flex: 2; /* Allow this section to grow */
+    display: flex;
+    padding: 10px; /* Adjusted padding */
+    gap: 20px;
+    overflow: hidden; /* Prevent this container from causing page scroll */
+}
+
+/* Data view panel styles (Used for Data Viewing/Cleaning Pages) */
+.data-view-panel {
+    flex: 3; /* Takes up more space */
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Prevent panel itself from scrolling */
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid #e5e7eb;
+    background: linear-gradient(to bottom, #ffffff, #f9fafb);
+    flex-shrink: 0; /* Prevent header from shrinking */
+    position: relative; /* Context for collapse button */
+}
+
+.panel-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.file-selector select {
+    padding: 10px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    min-width: 200px;
+    background-color: #f9fafb;
+}
+
+/* Container for the table enabling internal scroll (Data Viewing/Cleaning Pages) */
+.data-table-container {
+    flex: 1; /* Allow container to fill space within the panel */
+    overflow: auto;  /* Enables VERTICAL scroll */
+    overflow-x: auto; /* Enables HORIZONTAL scroll if content overflows */
+    padding: 0 20px 20px 20px; /* Adjust padding as needed */
+    contain: content;
+    will-change: transform;
+    position: relative; /* Needed for sticky header */
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; /* Allows browser to adjust column widths to fit */
+    contain: content;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    transition: background-color 0.2s ease;
+    text-align: left;
+    vertical-align: top; /* Align content top */
+}
+
+.data-table th {
+    background-color: #f7fafc;
+    font-weight: 600;
+    position: sticky; /* Make header sticky */
+    top: 0;           /* Stick to top of container */
+    z-index: 2;       /* Keep header above content */
+    vertical-align: bottom; /* Align header text bottom */
+}
+
+/* Optional: Make the first column (index '#') sticky too */
+.data-table th:first-child,
+.data-table td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1; /* Lower z-index than header */
+    background-color: inherit; /* Match row background */
+    border-right: 1px solid #e5e7eb; /* Optional separator */
+}
+.data-table tr:nth-child(even) td:first-child {
+     background-color: #f9fafb; /* Match even row background */
+}
+.data-table tr:hover td:first-child {
+     background-color: #edf2f7; /* Match hover background */
+}
+
+.data-table tr {
+    transition: background-color 0.2s ease;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.data-table tr:hover {
+    background-color: #edf2f7;
+}
+
+/* Loading state styles */
+.data-table-container.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Panel Footer Styles (Data Viewing/Cleaning Pages) */
+.panel-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-top: 1px solid #e5e7eb;
+    flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pagination-btn {
+    padding: 8px 16px;
+    background-color: #edf2f7;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.pagination-btn:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.continue-btn {
+    padding: 10px 20px;
+    background-color: #4a6cf7; /* Example color */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.continue-btn:hover {
+    background-color: #2b4ed1; /* Darker shade on hover */
+    transform: translateY(-1px);
+}
+
+/* Data summary / Cleaning Panel Styles (Used for Data Viewing/Cleaning Pages) */
+.data-summary-panel {
+    flex: 1; /* Takes up less space */
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Prevent panel itself from scrolling */
+}
+
+/* Specific styles for summary content (Data Viewing) */
+.summary-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Allow scrolling within summary content */
+}
+
+.summary-section {
+    margin-bottom: 24px;
+}
+
+.summary-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1a202c;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.info-box { /* Used for various sections in summary */
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.info-item, .type-item, .stat-row, .quality-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+.info-item:last-child, .type-item:last-child,
+.stat-row:last-child, .quality-row:last-child {
+    margin-bottom: 0;
+}
+
+.info-label, .type-label, .stat-label, .quality-label {
+    font-weight: 500;
+    color: #4a5568;
+    margin-right: 10px;
+}
+
+.info-value, .type-value, .stat-value, .quality-value {
+    color: #2d3748;
+    text-align: right;
+}
+
+.stat-item, .quality-item { /* Container for stats/quality per column */
+    margin-bottom: 16px;
+}
+.stat-item:last-child, .quality-item:last-child {
+    margin-bottom: 0;
+}
+
+.stat-item h4, .quality-item h4 { /* Column name header */
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2d3748;
+}
+
+.stat-details, .quality-details { /* Box around stats/quality details */
+    background-color: #f7fafc;
+    border-radius: 6px;
+    padding: 8px 12px;
+    border: 1px solid #edf2f7;
+}
+
+/* Specific styles for cleaning buttons (Data Cleaning Page) */
+.cleaning-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    overflow-y: auto; /* Enable scrolling for buttons if they overflow */
+    flex: 1; /* Allow button container to fill space */
+}
+
+.cleaning-buttons-divider {
+    height: 1px;
+    background-color: #e5e7eb;
+    margin: 12px 0;
+}
+
+.cleaning-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    padding: 12px 16px; /* Increased padding */
+    font-size: 15px; /* Slightly smaller font */
+    font-weight: 500;
+    color: #2d3748;
+    background-color: #edf2f7;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    width: 100%;
+    justify-content: flex-start; /* Align content left */
+    text-align: left;
+}
+
+.cleaning-btn .btn-icon {
+    font-size: 18px;
+    width: 20px; /* Fixed width for icon alignment */
+    text-align: center;
+}
+
+.cleaning-btn:hover {
+    background-color: #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+}
+
+.cleaning-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.cleaning-btn:disabled {
+    background-color: #f7fafc;
+    color: #a0aec0;
+    border-color: #e2e8f0;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.cleaning-btn.reset { /* Specific style for reset button */
+    background-color: #fff5f5; /* Light red background */
+    border: 1px solid #fed7d7; /* Red border */
+    color: #c53030; /* Dark red text */
+    font-weight: 600;
+    margin-top: 8px; /* Space above reset */
+}
+.cleaning-btn.reset:hover {
+    background-color: #fed7d7;
+    color: #9b2c2c;
+}
+
+/* Styles for Popups (used in data_cleaning.js and upload.js) */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px; /* Padding for smaller screens */
+}
+
+.popup-content {
+    background: #ffffff;
+    padding: 24px 30px; /* More padding */
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    max-width: 550px; /* Slightly wider */
+    width: 100%; /* Responsive width */
+    max-height: 90vh; /* Limit height */
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* More space */
+    padding-bottom: 16px; /* Space below header */
+    border-bottom: 1px solid #e5e7eb; /* Separator line */
+}
+
+.popup-title {
+    font-size: 1.3rem; /* Larger title */
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.popup-close {
+    background: none;
+    border: none;
+    font-size: 1.8rem; /* Larger close button */
+    cursor: pointer;
+    color: #718096;
+    padding: 0 5px;
+    line-height: 1;
+}
+.popup-close:hover {
+    color: #2d3748;
+}
+
+.popup-body {
+    margin-bottom: 24px; /* More space */
+    overflow-y: auto; /* Scroll body if content overflows */
+    flex-grow: 1; /* Allow body to take up space */
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+.popup-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+    flex-shrink: 0;
+}
+
+.popup-btn {
+    padding: 10px 20px; /* Bigger buttons */
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.popup-btn-primary {
+    background-color: #4a6cf7;
+    color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+.popup-btn-primary:hover {
+    background-color: #2b4ed1;
+}
+
+.popup-btn-secondary {
+    background-color: #edf2f7;
+    color: #2d3748;
+    transition: background-color 0.2s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.popup-btn-secondary:hover {
+    background-color: #e2e8f0;
+}
+
+/* Styles for form elements inside popups */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px; /* More space below label */
+    font-weight: 500;
+    color: #2d3748;
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e0; /* Slightly darker border */
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #ffffff; /* White background */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #4a6cf7;
+    box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
+}
+
+select.form-control { /* Ensure select matches input height */
+    height: 40px; /* Consistent with input elements */
+}
+
+.formm-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e0; /* Slightly darker border */
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #ffffff; /* White background */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+select.formm-control { /* Ensure select matches input height */
+    height: 80px; /* Consistent with input elements */
+}
+
+/* Checkbox and radio groups */
+.checkbox-group .checkbox-item,
+.radio-group .radio-item {
+    display: block; /* Stack options vertically */
+    margin-bottom: 10px;
+}
+.checkbox-group .checkbox-item label,
+.radio-group .radio-item label {
+    font-weight: normal; /* Normal weight for options */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+/* Style for custom value input next to radio */
+.checkbox-item label input[type="text"] {
+    display: inline-block;
+    width: auto;
+    flex-grow: 1;
+    margin-left: 5px;
+}
+
+/* Styles for mapping rows in popup (Data Cleaning) */
+.mapping-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.mapping-input {
+    flex: 1;
+}
+.remove-mapping-btn {
+    background-color: #fed7d7;
+    color: #c53030;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 22px;
+    text-align: center;
+}
+.remove-mapping-btn:hover {
+    background-color: #fbb6b6;
+}
+#add-mapping-btn { /* Style for the "Add Mapping" button */
+    margin-top: 10px;
+    padding: 6px 12px;
+    font-size: 13px;
+    background-color: #e2e8f0;
+    color: #4a5568;
+    border: 1px solid #cbd5e0;
+}
+#add-mapping-btn:hover {
+    background-color: #cbd5e0;
+}
+
+/* Thin Scrollbar Styles (Apply globally or to specific containers) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+    border: 1px solid #f1f1f1;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+/* Firefox */
+* { /* Apply to all elements that might scroll */
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 #f1f1f1; /* thumb track */
+}
+
+/* Visualization Page Specific Styles */
+.visualization-content-area {
+    display: flex;
+    padding: 10px;
+    gap: 20px; /* Space between dashboard and controls */
+    overflow: hidden; /* Prevent overflow from affecting layout */
+    flex: 1; /* Fill remaining vertical space */
+    position: relative;
+}
+
+/* Dashboard Display Panel */
+.dashboard-display-panel {
+    flex: 3; /* Takes more space than controls */
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* Ensure dashboard container has a defined height and constrains overflow */
+#dashboard-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+    position: relative;
+    background-color: #ffffff;
+    max-height: calc(100vh - 200px); /* Adjust based on header and padding */
+    min-height: 300px; /* Minimum height to prevent collapse */
+}
+
+/* Constrain chart container dimensions */
+.chart-container {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%; /* Default to full width, adjusted by size class */
+    max-width: 100%; /* Prevent overflow */
+    height: auto; /* Allow height to adjust to content */
+}
+
+.chart-half {
+    width: calc(50% - 10px); /* Account for gap */
+    min-height: 300px;
+    max-height: 500px; /* Cap height to prevent infinite growth */
+}
+
+.chart-full {
+    width: 100%;
+    min-height: 400px;
+    max-height: 600px; /* Cap height for full-width charts */
+}
+
+/* Ensure canvas respects container boundaries */
+.chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100%; /* Prevent canvas from exceeding container */
+    object-fit: contain; /* Ensure content fits within bounds */
+}
+
+/* Style chart title */
+.chart-title {
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a202c;
+    border-bottom: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+    text-align: center;
+}
+
+/* Visualization Controls Panel */
+.visualization-controls-panel {
+    flex: none;
+    width: 300px;
+    transition: width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+
+.visualization-controls-panel.collapsed {
+    width: 40px; /* Small rectangle width */
+    min-width: 40px; /* Ensure no residual width */
+    overflow: hidden;
+}
+
+.visualization-controls-panel.collapsed .panel-header h2,
+.visualization-controls-panel.collapsed .panel-body {
+    display: none; /* Hide content when collapsed */
+}
+
+.visualization-content-area.collapsed {
+    flex: 3 0 calc(100% - 40px); /* Adjust dashboard to take remaining space */
+}
+
+/* Collapse Button */
+.collapse-btn {
+    width: 32px;
+    height: 32px;
+    background-color: #edf2f7;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.3s ease; /* Smooth rotation */
+    z-index: 10;
+    position: absolute;
+    top: 10px;
+    right: 4px; /* Centered within the 40px collapsed width */
+}
+
+.collapse-btn:hover {
+    background-color: #e2e8f0;
+    transform: rotate(180deg); /* Rotate arrow to indicate expand */
+}
+
+.collapse-icon {
+    font-size: 18px;
+    color: #2d3748;
+    transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+.visualization-controls-panel.collapsed .collapse-btn {
+    right: 4px; /* Keep button centered in collapsed state */
+    transform: rotate(180deg); /* Initial rotation to show expand direction */
+}
+
+.visualization-controls-panel.collapsed .collapse-icon {
+    transform: rotate(180deg); /* Ensure arrow points correctly */
+}
+
+/* Ensure buttons match image style */
+.control-btn, .dashboard-btn {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Button hover effects */
+.control-btn:hover, .dashboard-btn:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+.dashboard-btn {
+    padding: 12px 16px;
+    background-color: #4a6cf7;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.dashboard-btn:hover {
+    background-color: #2b4ed1;
+    transform: translateY(-1px);
+}
+
+.dashboard-btn:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.arrow-icon {
+    font-size: 14px;
+}
+
+.chart-size-select {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chart-size-select label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.control-btn {
+    padding: 10px 16px;
+    background-color: #edf2f7;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2d3748;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.control-btn:disabled {
+    background-color: #f7fafc;
+    color: #a0aec0;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Filter Bar Styling */
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-bar label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.filter-bar select.form-control {
+    width: auto;
+    min-width: 120px;
+}
+
+/* Popup List Styling for Chart Suggestions */
+.popup-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.popup-body li {
+    margin-bottom: 12px;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background-color: #f9fafb;
+}
+
+.popup-body li strong {
+    font-size: 15px;
+    color: #1a202c;
+}
+
+.popup-body li em {
+    font-size: 13px;
+    color: #4a5568;
+}
+
+.popup-body li button.create-suggested-btn {
+    margin-top: 8px;
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+/* Upload styles */
+.upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    min-height: 300px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.upload-area.drag-over {
+    border-color: #4a6cf7;
+    background-color: rgba(74, 108, 247, 0.05);
+}
+
+.upload-icon {
+    color: #4a6cf7;
+    margin-bottom: 16px;
+}
+
+.upload-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.upload-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.upload-formats {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 24px;
+}
+
+.upload-browse-btn {
+    padding: 10px 20px;
+    background-color: #4a6cf7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-browse-btn:hover {
+    background-color: #3a5bd9;
+}
+
+.file-list-container {
+    width: 100%;
+}
+
+.file-list {
+    list-style: none;
+    margin-top: 16px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background-color: #f9f9f9;
+}
+
+.file-icon {
+    color: #4a6cf7;
+    margin-right: 12px;
+}
+
+.file-name {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+}
+
+.file-size {
+    font-size: 12px;
+    color: #999;
+    margin-right: 12px;
+}
+
+.remove-file-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ff4d4f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.remove-file-btn:hover {
+    background-color: #cf1322;
+}
+
+.upload-more-btn {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: #4a6cf7;
+    border: 1px solid #4a6cf7;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-more-btn:hover {
+    background-color: rgba(74, 108, 247, 0.1);
+}
+
+/* Message styles */
+.message {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1100;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.success-message {
+    background-color: #52c41a;
+    color: white;
+}
+
+.error-message {
+    background-color: #ff4d4f;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Thin Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+    border: 1px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 #f1f1f1; /* thumb track */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 1024px) {
+    .content-area {
+        padding: 15px;
+        gap: 15px;
+    }
+    .visualization-controls-panel {
+        width: 250px; /* Slightly narrower */
+    }
+    .visualization-controls-panel.collapsed {
+        width: 40px; /* Small rectangle width */
+    }
+    .chart-half {
+        width: 100%; /* Stack charts on smaller screens */
+    }
+    .chart-full {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-area {
+        flex-direction: column; /* Stack panels */
+        overflow-y: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+    html, body {
+        overflow: auto; /* Allow body scroll on mobile */
+    }
+    .container {
+        height: auto;
+        min-height: 100vh;
+    }
+    .main-content, .content-area, .data-view-panel, .data-summary-panel, .dashboard-display-panel, .visualization-controls-panel {
+        overflow: visible;
+    }
+    .data-view-panel, .dashboard-display-panel {
+        flex: none;
+        min-height: 400px;
+    }
+    .data-summary-panel, .visualization-controls-panel {
+        flex: none;
+        min-height: 300px;
+        width: 100%; /* Full width on mobile */
+    }
+    .visualization-controls-panel.collapsed {
+        width: 40px; /* Small rectangle width */
+        display: none; /* Optionally hide instead */
+    }
+    .collapse-btn {
+        display: none; /* Hide collapse button on mobile if sidebar hides */
+    }
+    .chart-half, .chart-full {
+        width: 100%;
+        min-height: 250px;
+    }
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .logo-breadcrumb-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .breadcrumb ul {
+        flex-wrap: wrap;
+    }
+}

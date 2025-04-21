@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Tales - Data Storytelling</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-breadcrumb-container">
+                <div class="logo">
+                    <div class="logo-icon"><span class="logo-letter">D</span></div>
+                    <div class="logo-text">DataStory</div>
+                </div>
+                <div class="breadcrumb">
+                     <ul>
+                        <li class="breadcrumb-item"><a href="upload.html">Data Upload</a></li>
+                        <li class="breadcrumb-separator">›</li>
+                        <li class="breadcrumb-item"><a href="data_viewing.html">Data Viewing</a></li>
+                        <li class="breadcrumb-separator">›</li>
+                        <li class="breadcrumb-item"><a href="data_cleaning.html">Data Cleaning</a></li>
+                        <li class="breadcrumb-separator">›</li>
+                        <li class="breadcrumb-item"><a href="data_visualization.html">Data Visualization</a></li>
+                        <li class="breadcrumb-separator">›</li>
+                        <li class="breadcrumb-item active"><span>Data Storytelling</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="user-btn">User</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="content-area storytelling-content-area">
+                <div class="storytelling-controls-panel">
+                    <div class="panel-header">
+                        <h2>Story Generation</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Generate a narrative based on your data and visualizations.</p>
+                        <button id="generate-story-btn" class="control-btn generate-story-btn">
+                            ✨ Generate Story
+                        </button>
+                         <div id="story-loading-indicator" class="loading-indicator" style="display: none;">
+                            Generating narrative... Please wait.
+                         </div>
+                    </div>
+                </div>
+
+                 <div class="story-display-panel">
+                    <div class="panel-header">
+                        <h2>Generated Story</h2>
+                         <div class="story-controls">
+                            <button id="copy-story-btn" class="story-control-btn" title="Copy Story" style="display: none;">📄 Copy</button>
+                        </div>
+                    </div>
+                    <div id="story-output-container" class="story-output-container">
+                        <div id="story-narrative" class="story-narrative-placeholder">
+                            Click "Generate Story" to see the narrative here.
+                        </div>
+                        <div id="story-charts" class="story-charts-container" style="display: none;">
+                            <h3>Relevant Visualizations</h3>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data_storytelling.js"></script>
+</body>
+</html>

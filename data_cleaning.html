@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Cleaning</title>
+    <link rel="stylesheet" href='Style.css'>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-breadcrumb-container">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <div class="logo-text">DataStory</div>
+                </div>
+                <div class="breadcrumb">
+                    <ul>
+                        <li class="breadcrumb-item">
+                            <a href="upload.html">Data Upload</a>
+                        </li>
+                        <li class="breadcrumb-separator">›</li>
+                        <li class="breadcrumb-item">
+                            <a href="data_viewing.html">Data Viewing</a>
+                        </li>
+                        <li class="breadcrumb-separator">›</li>
+                        <li class="breadcrumb-item active">
+                            <span>Data Cleaning</span>
+                        </li>
+                        <li class="breadcrumb-separator">›</li>
+                        <li class="breadcrumb-item">
+                            <span>Data Visualization</span>
+                        </li>
+                        <li class="breadcrumb-separator">›</li>
+                        <li class="breadcrumb-item">
+                            <span>Data Storytelling</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="user-btn">User</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content-area">
+            <!-- Left panel - Data view -->
+            <div class="data-view-panel">
+                <div class="panel-header">
+                    <h2>Data Preview</h2>
+                    <div class="file-selector">
+                        <select id="file-select">
+                            <!-- File options will be populated here -->
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="data-table-container">
+                    <table id="data-table" class="data-table">
+                        <!-- Table content will be populated here -->
+                    </table>
+                </div>
+
+                <div class="panel-footer">
+                    <div class="pagination">
+                        <button id="prev-page" class="pagination-btn" disabled>Previous</button>
+                        <span id="page-info">Page 1 of 1</span>
+                        <button id="next-page" class="pagination-btn">Next</button>
+                    </div>
+                    <button id="continue-to-visualization" class="continue-btn">Continue to visualization</button>
+                </div>
+            </div>
+
+            <!-- Right panel - Data cleaning -->
+            <div class="data-summary-panel">
+                <div class="panel-header">
+                    <h2>Data Cleaning</h2>
+                </div>
+                
+                <div class="cleaning-buttons">
+                    <button id="remove-duplicates" class="cleaning-btn">
+                        <span class="btn-icon">🗑️</span>
+                        Remove Duplicates
+                    </button>
+                    <button id="handle-missing" class="cleaning-btn">
+                        <span class="btn-icon">❓</span>
+                        Handle Missing Values
+                    </button>
+                    <button id="convert-types" class="cleaning-btn">
+                        <span class="btn-icon">🔄</span>
+                        Convert Data Types
+                    </button>
+                    <button id="clean-text" class="cleaning-btn">
+                        <span class="btn-icon">✂️</span>
+                        Clean Text Data
+                    </button>
+                    <button id="normalize-data" class="cleaning-btn">
+                        <span class="btn-icon">📊</span>
+                        Normalize Data
+                    </button>
+                    <button id="standardize-data" class="cleaning-btn">
+                        <span class="btn-icon">📈</span>
+                        Standardize Data
+                    </button>
+                    <button id="detect-outliers" class="cleaning-btn">
+                        <span class="btn-icon">📊</span>
+                        Detect Outliers
+                    </button>
+                    <button id="handle-outliers" class="cleaning-btn">
+                        <span class="btn-icon">✂️</span>
+                        Handle Outliers
+                    </button>
+                    <button id="add-derived-column" class="cleaning-btn">
+                        <span class="btn-icon">➕</span>
+                        Add Derived Column
+                    </button>
+                    <button id="handle-inconsistent" class="cleaning-btn">
+                        <span class="btn-icon">♻️</span>
+                        Handle Inconsistent Data
+                    </button>
+                    <div class="cleaning-buttons-divider"></div>
+                    <button id="reset-changes" class="cleaning-btn reset">
+                        <span class="btn-icon">↩️</span>
+                        Reset All Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include JavaScript files -->
+    <script src="data_cleaning.js"></script>
+</body>
+</html>
