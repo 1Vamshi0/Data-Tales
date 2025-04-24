@@ -48,14 +48,13 @@ DataTales is a web application designed to guide users through a complete data a
 
 1.  **Clone the Repository:**
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/1Vamshi0/Data-Tales.git
     cd DataTales
     ```
 2.  **Create a Virtual Environment (Recommended):**
     ```bash
     python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    ```
+    venv\Scripts\activate    ```
 3.  **Install Dependencies:**
     ```bash
     pip install -r requirements.txt
@@ -85,4 +84,9 @@ DataTales is a web application designed to guide users through a complete data a
 4.  **Visualize Data:** Move to the "Data Visualization" page. Create charts manually by selecting columns and chart types, or click "Dashboard" to get AI-suggested visualizations. Arrange charts on the dashboard as needed.
 5.  **Generate Story:** Finally, go to the "Data Storytelling" page. Click "Generate Story" to get an AI-generated narrative based on your cleaned and visualized data.
 
-## 📁 File Structure (Simplified)
+## API Integration
+
+* This project utilizes the **Google Gemini API** for intelligent features:
+    * **Chart Suggestions:** Analyzes data structure and content to recommend relevant chart types and column combinations on the Visualization page.
+    * **Data Storytelling:** Generates natural language narratives summarizing key insights from the dataset on the Storytelling page.
+* An active Google Gemini API key is required and must be configured in `gemini.py` for these features to work.
