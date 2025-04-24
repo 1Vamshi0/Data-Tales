@@ -7,22 +7,7 @@ DataTales is a web application designed to guide users through a complete data a
 * **⬆️ Data Upload:** Upload datasets in CSV or Excel formats (.csv, .xlsx, .xls).
 * **👀 Data Viewing:** Preview uploaded data in a paginated table and view summary statistics (file info, column types, basic stats, data quality metrics).
 * **🧹 Interactive Data Cleaning:** Perform a wide range of data cleaning tasks:
-    * Remove Duplicate Rows
-    * Handle Missing Values (remove, fill with mean/median/mode/custom value)
-    * Convert Data Types (text, number, date, boolean)
-    * Clean Text Data (trim whitespace, change case, remove punctuation/digits)
-    * Normalize Data (Min-Max Scaling)
-    * Standardize Data (Z-Score Scaling)
-    * Detect & Handle Outliers (IQR, Z-Score methods; clip, remove, replace)
-    * Add Derived Columns (sum, mean, median, product, difference, mode)
-    * Handle Inconsistent Data (standardize using custom mappings or auto-detection)
-    * Reset all cleaning changes to the original data state.
-* **📈 Data Visualization:**
-    * Create various chart types manually (Bar, Line, Pie, Scatter, Histogram) using Chart.js.
-    * Select X/Y axes and customize chart size.
-    * Generate an automatic dashboard with suggested visualizations based on data analysis.
-    * Organize charts in a drag-and-drop dashboard interface.
-    * Export individual charts as PNG images.
+* **📈 Data Visualization:** * Generate an automatic dashboard with suggested visualizations based on data analysis.
 * **🤖 AI-Powered Storytelling:** Generate concise narratives summarizing key insights and trends found in the data using the Google Gemini API.
 * **🧭 Guided Workflow:** A clear, step-by-step user interface guides users through the analysis process from upload to storytelling. [cite: 1]
 
@@ -34,7 +19,7 @@ DataTales is a web application designed to guide users through a complete data a
     * Pandas (Data Manipulation & Analysis)
     * NumPy
 * **Frontend:**
-    * HTML [cite: 1]
+    * HTML 
     * CSS
     * JavaScript (DOM manipulation, event handling, API calls)
 * **Visualization Library:**
@@ -72,6 +57,8 @@ DataTales is a web application designed to guide users through a complete data a
     ```bash
     python server.py
     ```
+6.  **Run Upload.html:**
+    * Use Live Server
    
 6.  **Access the Application:**
     * Open your web browser and navigate to `http://127.0.0.1:5000` or `http://localhost:5000`.
