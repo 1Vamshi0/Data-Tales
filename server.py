@@ -1,18 +1,15 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-# Remove Dash imports if not strictly needed for the primary upload/clean/viz flow now
-# from dash import Dash, html, dcc
-# import plotly.express as px
 import pandas as pd
-from data_cleaning_operations import DataCleaner # Ensure this class is in data_cleaning_operations.py
-from gemini import api_tool # Ensure this is correctly set up in gemini.py
+from data_cleaning_operations import DataCleaner 
+from gemini import api_tool 
 import json
 import time
 import re
-import numpy as np # Make sure numpy is imported
-import os # Added for file operations
-from werkzeug.utils import secure_filename # Added for safe filenames
+import numpy as np
+import os 
+from werkzeug.utils import secure_filename 
 
 app = Flask(__name__)
 # Apply CORS to all routes from any origin
@@ -502,6 +499,7 @@ def suggest_charts():
         4. Consider the cognitive principles of effective data visualization
         5. Use ONLY the exact column headers provided in the input data
         6. Include at least 5-7 diverse visualization recommendations to provide comprehensive coverage of the dataset
+        7. only give charts which can be made with chart.js (Scatter Plot, Line Chart, Bar Chart, Pie Chart, Donut Chart, Bubble Chart, Area Chart, Radar Chart)
 
         Your output must be ONLY the valid JSON object with no additional text, explanations or formatting.
         """

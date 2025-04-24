@@ -56,6 +56,7 @@ html, body {
 .logo-breadcrumb-container {
     display: flex;
     align-items: center;
+    
 }
 
 .logo {
@@ -1613,3 +1614,139 @@ select.formm-control { /* Ensure select matches input height */
 .story-control-btn:hover {
     background-color: #e2e8f0;
 }
+
+/* From Uiverse.io by Donewenfu */ 
+.loader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .jimu-primary-loading:before,
+  .jimu-primary-loading:after {
+    position: absolute;
+    top: 0;
+    content: '';
+  }
+  
+  .jimu-primary-loading:before {
+    left: -19.992px;
+  }
+  
+  .jimu-primary-loading:after {
+    left: 19.992px;
+    -webkit-animation-delay: 0.32s !important;
+    animation-delay: 0.32s !important;
+  }
+  
+  .jimu-primary-loading:before,
+  .jimu-primary-loading:after,
+  .jimu-primary-loading {
+    background: #076fe5;
+    -webkit-animation: loading-keys-app-loading 0.8s infinite ease-in-out;
+    animation: loading-keys-app-loading 0.8s infinite ease-in-out;
+    width: 13.6px;
+    height: 32px;
+  }
+  
+  .jimu-primary-loading {
+    text-indent: -9999em;
+    margin: auto;
+    position: absolute;
+    right: calc(50% - 6.8px);
+    top: calc(50% - 16px);
+    -webkit-animation-delay: 0.16s !important;
+    animation-delay: 0.16s !important;
+  }
+  
+  @-webkit-keyframes loading-keys-app-loading {
+  
+    0%,
+    80%,
+    100% {
+      opacity: .75;
+      box-shadow: 0 0 #076fe5;
+      height: 32px;
+    }
+  
+    40% {
+      opacity: 1;
+      box-shadow: 0 -8px #076fe5;
+      height: 40px;
+    }
+  }
+  
+  @keyframes loading-keys-app-loading {
+  
+    0%,
+    80%,
+    100% {
+      opacity: .75;
+      box-shadow: 0 0 #076fe5;
+      height: 32px;
+    }
+  
+    40% {
+      opacity: 1;
+      box-shadow: 0 -8px #076fe5;
+      height: 40px;
+    }
+  }
+
+  /* From Uiverse.io by adamgiebl */ 
+.cssbuttons_io_button {
+    background: #ff9c19;
+    color: white;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #714da6;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+  }
+  
+  .cssbuttons_io_button .icon {
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+    right: 0.3em;
+    transition: all 0.3s;
+  }
+  
+  .cssbuttons_io_button:hover .icon {
+    width: calc(100% - 0.6em);
+  }
+  
+  .cssbuttons_io_button .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #7b52b9;
+  }
+  
+  .cssbuttons_io_button:hover .icon svg {
+    transform: translateX(0.1em);
+  }
+  
+  .cssbuttons_io_button:active .icon {
+    transform: scale(0.95);
+  }
+  
