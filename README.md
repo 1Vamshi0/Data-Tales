@@ -1,4 +1,4 @@
-# DataTales 📊✍️
+# DataTales 📊
 
 DataTales is a web application designed to guide users through a complete data analysis pipeline. It allows for uploading datasets, viewing and understanding the data, performing various cleaning operations, creating insightful visualizations, and finally, generating AI-powered narratives to tell the story behind the data. 
 
