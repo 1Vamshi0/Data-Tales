@@ -76,7 +76,7 @@ html, body {
     justify-content: center;
 }
 
-.logo-letter { /* Example if you put a letter inside */
+.logo-letter { 
     font-size: 20px;
     font-weight: 700;
     color: #fff;
@@ -91,21 +91,23 @@ html, body {
 .breadcrumb ul {
     display: flex;
     list-style: none;
+    padding: 0; /* Reset default padding */
+    margin: 0; /* Reset default margin */
+    flex-wrap: wrap; /* Allow breadcrumbs to wrap */
+    align-items: center; /* Vertical alignment */
 }
 
 .breadcrumb-item {
     font-size: 14px;
     color: #718096;
-}
-
-.breadcrumb-item.active {
-    color: #4a6cf7; /* Example active color */
-    font-weight: 500;
+    display: flex;       /* Use Flexbox */
+    align-items: center; /* Center items vertically */
 }
 
 .breadcrumb-item a {
     color: #718096;
     text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease; /* Smooth transitions */
 }
 
 .breadcrumb-item a:hover {
@@ -116,8 +118,22 @@ html, body {
 .breadcrumb-separator {
     margin: 0 8px;
     color: #cbd5e0;
+    font-size: 12px;       /* Slightly smaller */
+    display: flex;       /* Use Flexbox */
+    align-items: center; /* Center vertically */
 }
 
+.breadcrumb-item active {
+    color: #4a6cf7;
+    font-weight: 500;
+}
+
+/* Add some spacing and alignment */
+.logo-breadcrumb-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between logo and breadcrumb */
+}
 .header-controls {
     display: flex;
     align-items: center;
@@ -1601,18 +1617,18 @@ select.formm-control { /* Ensure select matches input height */
 
 .story-control-btn {
     padding: 6px 12px;
-    background-color: #edf2f7;
-    border: 1px solid #e2e8f0;
+    background-color: #f7f5ed;
+    border: 2px solid #ff8800;
     border-radius: 6px;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 600;
     color: #2d3748;
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
 .story-control-btn:hover {
-    background-color: #e2e8f0;
+    background-color: #ff9900;
 }
 
 /* From Uiverse.io by Donewenfu */ 

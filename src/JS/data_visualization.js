@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
 });
 
-// NEW: Load data from the server
+// Loading data from the server
 async function loadDataFromServer() {
     console.log("Attempting to load data for visualization...");
     try {
@@ -209,9 +209,7 @@ function handleCreateChart() {
 }
 
 
-// --- Data Preparation Helpers (Unchanged, operate on passed 'rows') ---
-// These functions (prepareHistogramData, prepareAggregateData, prepareStandardChartData, prepareScatterData)
-// remain the same as they operate on the 'rows' array passed to them.
+// Data Preparation Helpers 
 
 function prepareHistogramData(rows, valueColumn) {
     const values = rows.map(row => parseFloat(row[valueColumn])).filter(val => !isNaN(val));
@@ -293,8 +291,8 @@ function prepareScatterData(rows, xColumn, yColumn) {
 }
 
 
-// --- Dashboard Management (Unchanged: addChartToDashboard, removeChart, exportChart, clearDashboard, getChartColors) ---
-// These functions should work as before, operating on the generated chart data.
+// Dashboard Management 
+
 function addChartToDashboard(chartType, labels, data, options = {}, title = 'Chart', size = 'half') {
     if (dashboardPlaceholder) dashboardPlaceholder.style.display = 'none';
 

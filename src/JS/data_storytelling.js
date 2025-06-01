@@ -17,7 +17,7 @@ const panelHeaderFileName = document.querySelector('.story-display-panel .panel-
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
     // Check if essential elements exist
-    if (!generateStoryBtn || !storyNarrativeDiv || !loadingIndicator || !copyStoryBtn || !panelHeaderFileName) {
+    if (!generateStoryBtn || !storyNarrativeDiv || !loadingIndicator  || !panelHeaderFileName) {
         console.error("One or more essential UI elements are missing from data_storytelling.html.");
         if (storyNarrativeDiv) storyNarrativeDiv.innerHTML = "<p style='color: red;'>Error: UI elements missing.</p>";
         return;

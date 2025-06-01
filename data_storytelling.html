@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -17,7 +19,7 @@
                     <div class="logo-text">DataTales</div>
                 </div>
                 <div class="breadcrumb">
-                     <ul>
+                    <ul>
                         <li class="breadcrumb-item"><a href="upload.html">Data Upload</a></li>
                         <li class="breadcrumb-separator">›</li>
                         <li class="breadcrumb-item"><a href="data_viewing.html">Data Viewing</a></li>
@@ -30,7 +32,7 @@
                     </ul>
                 </div>
             </div>
-            
+
         </div>
 
         <div class="main-content">
@@ -44,17 +46,18 @@
                         <button id="generate-story-btn" class="control-btn generate-story-btn">
                             ✨ Generate Story
                         </button>
-                         <div id="story-loading-indicator" class="loading-indicator" style="display: none;">
+                        <div id="story-loading-indicator" class="loading-indicator" style="display: none;">
                             Generating narrative... Please wait.
-                         </div>
+                        </div>
                     </div>
                 </div>
 
-                 <div class="story-display-panel">
+                <div class="story-display-panel">
                     <div class="panel-header">
                         <h2>Generated Story</h2>
-                         <div class="story-controls">
-                            <button id="copy-story-btn" class="story-control-btn" title="Copy Story" style="display: none;">📄 Copy</button>
+                        <div class="story-controls">
+                            <button id="copy-story-btn" class="story-control-btn" title="Copy Story"
+                                style="display: none;">📄 Copy</button>
                         </div>
                     </div>
                     <div id="story-output-container" class="story-output-container">
@@ -63,13 +66,14 @@
                         </div>
                         <div id="story-charts" class="story-charts-container" style="display: none;">
                             <h3>Relevant Visualizations</h3>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="data_storytelling.js"></script>
+    <script src="src\JS\data_storytelling.js"></script>
 </body>
+
 </html>

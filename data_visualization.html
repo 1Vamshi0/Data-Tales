@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom/dist/chartjs-plugin-zoom.min.js"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -31,7 +33,7 @@
                     </ul>
                 </div>
             </div>
-            
+
         </div>
 
         <div class="main-content">
@@ -55,7 +57,8 @@
                         </button>
                     </div>
                     <div class="panel-body">
-                        <button id="auto-dashboard-btn" class="dashboard-btn">Dashboard <span class="arrow-icon">▶</span></button>
+                        <button id="auto-dashboard-btn" class="dashboard-btn">Dashboard <span
+                                class="arrow-icon">▶</span></button>
                         <p>Select columns and chart types manually or use auto-suggestion:</p>
                         <select id="column-select-x" class="form-control">
                             <option value="">Select X-axis / Category</option>
@@ -78,7 +81,7 @@
                             </select>
                         </div>
                         <button id="create-chart-btn" class="control-btn">Create Chart</button>
-                        <button id="go-to-storytelling-btn" class="control-btn">
+                        <button id="go-to-storytelling-btn" class="continue-btn">
                             Proceed to Storytelling →
                         </button>
                     </div>
@@ -87,6 +90,7 @@
         </div>
     </div>
 
-    <script src="data_visualization.js"></script>
+    <script src="src\JS\data_visualization.js"></script>
 </body>
+
 </html>

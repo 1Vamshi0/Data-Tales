@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Tales - tool for data</title>
     <link rel="stylesheet" href="Style.css">
-    </head>
+</head>
+
 <body>
     <div class="container">
         <div class="main-content">
@@ -15,20 +17,26 @@
                         <div class="logo-icon"><span class="logo-letter">D</span></div>
                         <span class="logo-text">Data Tales</span>
                     </div>
-                    
+
                     <div class="breadcrumb">
                         <ul>
-                            <li class="breadcrumb-item active"> <span>Data Upload</span> </li>
-                            <li class="breadcrumb-separator">›</li> <li class="breadcrumb-item">
+                            <li class="breadcrumb-item active">
+                                <span>Data Upload</span>
+                            </li>
+                            <li class="breadcrumb-separator">›</li>
+                            <li class="breadcrumb-item">
                                 <a href="data_viewing.html">Data Viewing</a>
                             </li>
-                            <li class="breadcrumb-separator">›</li> <li class="breadcrumb-item">
+                            <li class="breadcrumb-separator">›</li>
+                            <li class="breadcrumb-item">
                                 <a href="data_cleaning.html">Data Cleaning</a>
                             </li>
-                            <li class="breadcrumb-separator">›</li> <li class="breadcrumb-item">
+                            <li class="breadcrumb-separator">›</li>
+                            <li class="breadcrumb-item">
                                 <a href="data_visualization.html">Data Visualization</a>
                             </li>
-                            <li class="breadcrumb-separator">›</li> <li class="breadcrumb-item">
+                            <li class="breadcrumb-separator">›</li>
+                            <li class="breadcrumb-item">
                                 <a href="data_storytelling.html">Data Storytelling</a>
                             </li>
                         </ul>
@@ -36,44 +44,45 @@
                 </div>
 
 
-                
+
             </div>
 
-                        <div id="data-tales-file-uploader" class="upload-area">  <div class="upload-initial-prompt">
-                                <div class="upload-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                        <polyline points="17 8 12 3 7 8"></polyline>
-                                        <line x1="12" y1="3" x2="12" y2="15"></line>
-                                    </svg>
-                                </div>
-                                <h3 class="upload-title">Upload Your Dataset</h3>
-                                <p class="upload-description">Drag and drop files here or click to browse</p>
-                                <p class="upload-formats">Supported formats: CSV, Excel</p>
-                                <button class="upload-browse-btn">Browse Files</button>
-                                <input type="file" id="file-upload" class="file-input" accept=".csv,.xlsx,.xls" multiple hidden>
-                            </div>
-
-                             <div class="upload-status-area" style="display: none;">
-                                <h3>Uploading...</h3>
-                                <!-- From Uiverse.io by Donewenfu --> 
-                                <div class="loader">
-                                    <div class="justify-content-center jimu-primary-loading"></div>
-                                </div>
-                                <p class="upload-status-message"></p>
-                                <button class="cancel-upload-btn" style="display: none;">Cancel</button>
-                            </div>
-
-                            <div class="file-list-container" style="display: none;">
-                                </div>
-
-                        </div>
+            <div id="data-tales-file-uploader" class="upload-area">
+                <div class="upload-initial-prompt">
+                    <div class="upload-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
                     </div>
-                <div class="continue-button-container" style="text-align: center; padding: 20px;">
-                      <button class="continue-btn" style="display: none;">Continue to Data Viewing</button>
-                 </div>
+                    <h3 class="upload-title">Upload Your Dataset</h3>
+                    <p class="upload-description">Drag and drop files here or click to browse</p>
+                    <p class="upload-formats">Supported formats: CSV, Excel</p>
+                    <button class="upload-browse-btn">Browse Files</button>
+                    <input type="file" id="file-upload" class="file-input" accept=".csv,.xlsx,.xls" multiple hidden>
+                </div>
+
+                <div class="upload-status-area" style="display: none;">
+                    <h3>Uploading...</h3>
+                    <div class="loader">
+                        <div class="justify-content-center jimu-primary-loading"></div>
+                    </div>
+                    <p class="upload-status-message"></p>
+                    <button class="cancel-upload-btn" style="display: none;">Cancel</button>
+                </div>
+
+                <div class="file-list-container" style="display: none;">
+                </div>
+
             </div>
+        </div>
+        <div class="continue-button-container" style="text-align: center; padding: 20px;">
+            <button class="continue-btn" style="display: none;">Continue to Data Viewing</button>
+        </div>
     </div>
-    <script src="upload.js"></script>
+    <script src="src\JS\upload.js"></script>
 </body>
+
 </html>

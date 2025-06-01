@@ -15,17 +15,9 @@ app = Flask(__name__)
 # Apply CORS to all routes from any origin
 CORS(app)
 
-# --- Configuration ---
-# Optional: Configure an upload folder
-# UPLOAD_FOLDER = 'uploads' 
-# app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-# if not os.path.exists(UPLOAD_FOLDER):
-#     os.makedirs(UPLOAD_FOLDER)
+
 ALLOWED_EXTENSIONS = {'csv', 'xlsx', 'xls'}
 
-# Global variable to hold the DataCleaner instance
-# WARNING: Using a global variable like this is not suitable for concurrent users.
-# For a production app, consider using sessions or a more robust state management approach.
 current_cleaner = None
 # Store metadata about the loaded file
 current_file_info = {
@@ -162,7 +154,6 @@ def get_data():
     }), 200
 
 
-# --- OLD Initialization Endpoint (Potentially redundant now) ---
 # Kept for reference or potential fallback, but the primary flow uses /upload_file
 @app.route('/initialize', methods=['POST'])
 def initialize():
@@ -170,10 +161,7 @@ def initialize():
     global current_cleaner, current_file_info
     data = request.json.get('data')
     print(f"Initialize called with data length: {len(data) if data else 0} (Legacy endpoint)") # Keep for debugging
-    
-    # This endpoint likely shouldn't be used if /upload_file is the primary method.
-    # If it IS used, we need to update current_file_info appropriately.
-    # For now, just initialize the cleaner.
+
     
     if not isinstance(data, list):
         print("Error: Invalid data format received for initialization.")
@@ -209,7 +197,7 @@ def initialize():
             print(f"Error initializing DataCleaner: {str(e)}")
             return jsonify({'error': f'Failed to initialize data cleaner: {str(e)}'}), 500
 
-# --- CLEANING OPERATION ENDPOINTS (Largely Unchanged, use check_cleaner) ---
+# CLEANING OPERATION ENDPOINTS 
 
 @app.route('/remove_duplicates', methods=['POST'])
 def remove_duplicates_route():
@@ -410,8 +398,7 @@ def reset_changes_route():
         print(f"Error during reset_changes: {str(e)}")
         return jsonify({'error': f'An unexpected error occurred during reset: {str(e)}'}), 500
 
-# --- OTHER ROUTES (Suggest Charts, Generate Story - Need Modification?) ---
-# These likely need sample data from the *current* state of current_cleaner now.
+#  OTHER ROUTES 
 
 @app.route('/suggest_charts', methods=['POST'])
 def suggest_charts():
@@ -434,7 +421,6 @@ def suggest_charts():
     if not headers or not sample_rows:
         return jsonify({'error': 'Missing required parameters: "headers" and "sample_rows" are required.'}), 400
     
-    # --- Rest of the function is the same as before ---
     max_retries = 3
     retry_delay = 5  # seconds
     prompt = f"""
@@ -449,7 +435,7 @@ def suggest_charts():
         Return ONLY a valid JSON object with the following structure:
         - Each key is a concise yet descriptive chart title that conveys the specific insight (e.g., "Monthly Revenue Growth Rate" instead of just "Revenue Chart")
         - Each value is a JSON object containing:
-            - "type": The Chart.js chart type that best fits the insight: 'bar', 'line', 'scatter', 'pie', 'polarArea', 'radar', 'doughnut', or 'histogram' (for distributions)
+            - "type": The Chart.js chart type that best fits the insight: 'bar', 'line', 'scatter', 'pie', 'polarArea', 'doughnut', or 'histogram' (for distributions)
             - "x": The exact column header for the X-axis/categories (from provided headers only)
             - "y": The exact column header for the Y-axis/values (from provided headers only, null if not applicable e.g., for pie count)
             - "insight": A brief description of what business insight this visualization reveals
