@@ -1,17 +1,17 @@
-# DataTales 📊✍️
+# DataTales 📊
 
 DataTales is a web application designed to guide users through a complete data analysis pipeline. It allows for uploading datasets, viewing and understanding the data, performing various cleaning operations, creating insightful visualizations, and finally, generating AI-powered narratives to tell the story behind the data. 
 
-## ✨ Features
+## Features
 
-* **⬆️ Data Upload:** Upload datasets in CSV or Excel formats (.csv, .xlsx, .xls).
-* **👀 Data Viewing:** Preview uploaded data in a paginated table and view summary statistics (file info, column types, basic stats, data quality metrics).
-* **🧹 Interactive Data Cleaning:** Perform a wide range of data cleaning tasks:
-* **📈 Data Visualization:** * Generate an automatic dashboard with suggested visualizations based on data analysis.
-* **🤖 AI-Powered Storytelling:** Generate concise narratives summarizing key insights and trends found in the data using the Google Gemini API.
-* **🧭 Guided Workflow:** A clear, step-by-step user interface guides users through the analysis process from upload to storytelling. [cite: 1]
+* **Data Upload:** Upload datasets in CSV or Excel formats (.csv, .xlsx, .xls).
+* **Data Viewing:** Preview uploaded data in a paginated table and view summary statistics (file info, column types, basic stats, data quality metrics).
+* **Interactive Data Cleaning:** Perform a wide range of data cleaning tasks:
+* **Data Visualization:** * Generate an automatic dashboard with suggested visualizations based on data analysis.
+* **AI-Powered Storytelling:** Generate concise narratives summarizing key insights and trends found in the data using the Google Gemini API.
+* **Guided Workflow:** A clear, step-by-step user interface guides users through the analysis process from upload to storytelling. [cite: 1]
 
-## 💻 Technology Stack
+## Technology Stack
 
 * **Backend:**
     * Python
@@ -63,7 +63,7 @@ DataTales is a web application designed to guide users through a complete data a
 6.  **Access the Application:**
     * Open your web browser and navigate to `http://127.0.0.1:5000` or `http://localhost:5000`.
 
-## 🚀 Usage
+## Usage
 
 1.  **Upload Data:** Start by navigating to the "Data Upload" page. Drag and drop your CSV or Excel file onto the upload area, or click "Browse Files" to select it.
 2.  **View Data:** Once uploaded, click "Continue to Data Viewing". Here you can preview the data table and see automatically generated summaries and statistics.
