@@ -25,7 +25,7 @@ DataTales is a web application designed to guide users through a complete data a
 * **Visualization Library:**
     * Chart.js
 * **AI Integration:**
-    * Google Gemini API (via provided `gemini.py`)
+    * Google Gemini API (provided via `gemini.py`)
 * **Server (Optional):**
     * Gunicorn (listed in `requirements.txt`)
 
